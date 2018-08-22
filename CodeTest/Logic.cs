@@ -27,8 +27,14 @@ namespace CodeTest
                         LaptopCount++;
                     }
                 }
+                int reductionCount = (((LaptopCount / 2) == 0 && LaptopCount != 0 && LaptopCount != 1) ? 1 : (LaptopCount / 2));
+                // taking care of corner cases .
+                if (LaptopCount == 1 && ComputerCount != 1)
+                {
+                    reductionCount = 1;
+                }
 
-                result = result + (ComputerCount - (((LaptopCount / 2) == 0 && LaptopCount != 0 && LaptopCount != 1) ? 1 : (LaptopCount / 2)));
+                result = result + (ComputerCount - reductionCount);
 
             }
             return result;
