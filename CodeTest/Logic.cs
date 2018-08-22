@@ -10,6 +10,8 @@ namespace CodeTest
     class Logic
     {
 
+        // Main Licensing logic exists here .
+
         public int calculateLicense(List<string> users, Dictionary<string, List<Computer>> userComputer)
         {
             int result = 0;
@@ -26,7 +28,7 @@ namespace CodeTest
                     }
                 }
 
-                result = result + (ComputerCount - ((LaptopCount / 2) == 0 ? 1 : (LaptopCount /2)));
+                result = result + (ComputerCount - (((LaptopCount / 2) == 0 && LaptopCount != 0 && LaptopCount != 1) ? 1 : (LaptopCount / 2)));
 
             }
             return result;
@@ -43,6 +45,7 @@ namespace CodeTest
                     var values = line.Split(',');
                     if (values[2] == applicationID && values[2] != "" && values[2] != null)
                     {
+                        //Uncomment for debug output.
                         //  Console.WriteLine("ComputerID {0} : UserID {1} : ApplicationID {2} : ComputerType {3}", values[0].ToString(), values[1].ToString(), values[2].ToString(), values[3].ToString());
                         if (!applicationUsers.Contains(values[1]))
                         {
