@@ -20,21 +20,30 @@ namespace CodeTest
                 //Get the computer count for each user 
                 int ComputerCount = userComputer[user].Count();
                 int LaptopCount = 0;
+                int ServerCount = 0;
+                int PartCount = 0;
                 foreach (var Computer in userComputer[user])
                 {
                     if (Computer.ComputerType == "LAPTOP")
                     {
                         LaptopCount++;
                     }
+                    if (Computer.ComputerType == "DESKTOP")
+                    {
+                        ServerCount++;
+                    }
                 }
-                int reductionCount = (((LaptopCount / 2) == 0 && LaptopCount != 0 && LaptopCount != 1) ? 1 : (LaptopCount / 2));
-                // taking care of corner cases .
-                if (LaptopCount == 1 && ComputerCount != 1)
+                if(ServerCount >= LaptopCount)
                 {
-                    reductionCount = 1;
+                    PartCount = LaptopCount + (ServerCount - LaptopCount);
+                }
+                else
+                {
+                    PartCount = (((LaptopCount - ServerCount) % 2 == 0) ? ((LaptopCount - ServerCount) / 2) : (((LaptopCount - ServerCount) / 2) + 1)) + ServerCount;
                 }
 
-                result = result + (ComputerCount - reductionCount);
+
+                result = result + PartCount;
 
             }
             return result;
