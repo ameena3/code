@@ -5,3 +5,10 @@ C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\bin\Debu
 C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\bin\Debug\CodeTest.pdb
 C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\obj\Debug\CodeTest.exe
 C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\obj\Debug\CodeTest.pdb
+D:\HobbyApp\CodeTest\codeTest\CodeTest\bin\Debug\CodeTest.exe.config
+D:\HobbyApp\CodeTest\codeTest\CodeTest\bin\Debug\CodeTest.exe
+D:\HobbyApp\CodeTest\codeTest\CodeTest\bin\Debug\CodeTest.pdb
+D:\HobbyApp\CodeTest\codeTest\CodeTest\obj\Debug\CodeTest.csproj.CoreCompileInputs.cache
+D:\HobbyApp\CodeTest\codeTest\CodeTest\obj\Debug\CodeTest.exe
+D:\HobbyApp\CodeTest\codeTest\CodeTest\obj\Debug\CodeTest.pdb
+D:\HobbyApp\CodeTest\codeTest\CodeTest\obj\Debug\CodeTest.csprojAssemblyReference.cache

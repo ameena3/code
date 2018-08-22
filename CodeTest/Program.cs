@@ -17,8 +17,8 @@ namespace CodeTest
             ReadAndInsertData(ref applicationUsers,ref userComputers, "374");
             foreach (var item in userComputers)
             {
-                Console.WriteLine(item.Key);
-                Console.WriteLine("the list is :");
+                Console.WriteLine("UserID is : {0}" , item.Key);
+                Console.WriteLine("the Computer list is :");
                 foreach (var values in item.Value)
                 {
                     Console.WriteLine("ComputerID {0}, ComputerType {1}",values.ComputerID,values.ComputerType);
@@ -26,12 +26,14 @@ namespace CodeTest
             }
 
             Console.WriteLine("done 2");
+            int answer = calculateLicense(applicationUsers, userComputers);
+            Console.WriteLine("The required License count is : {0}", answer);
             Console.ReadLine();
         }
 
         public static void ReadAndInsertData(ref List<string> applicationUsers,ref Dictionary<string, List<Computer>> userComputers, string applicationID)
         {
-            using (var reader = new StreamReader(File.OpenRead("D:\\sample-small1.csv")))
+            using (var reader = new StreamReader(File.OpenRead("C:\\Users\\anubh\\Downloads\\Code Test\\sample-small1.csv")))
             {
                 while(!reader.EndOfStream)
                {
@@ -39,16 +41,16 @@ namespace CodeTest
                     var values = line.Split(',');
                     if (values[2] == applicationID && values[2] != "" && values[2] != null)
                     {
-                        Console.WriteLine("ComputerID {0} : UserID {1} : ApplicationID {2} : ComputerType {3}", values[0].ToString(), values[1].ToString(), values[2].ToString(), values[3].ToString());
+                      //  Console.WriteLine("ComputerID {0} : UserID {1} : ApplicationID {2} : ComputerType {3}", values[0].ToString(), values[1].ToString(), values[2].ToString(), values[3].ToString());
                         if (!applicationUsers.Contains(values[1]))
                         {
-                            applicationUsers.Add(values[1]);
+                            applicationUsers.Add(values[1].ToUpper());
                         }
 
                         var computerInfo = new Computer
                         {
-                            ComputerID = values[0],
-                            ComputerType = values[3]
+                            ComputerID = values[0].ToUpper(),
+                            ComputerType = values[3].ToUpper()
                         };
 
                         if (userComputers.ContainsKey(values[1]))
@@ -82,9 +84,31 @@ namespace CodeTest
                     
                 }
             }
-            Console.WriteLine("done");
-            Console.ReadLine();
+            //Console.WriteLine("done");
+            //Console.ReadLine();
 
+        }
+
+        public static int calculateLicense(List<string> users, Dictionary<string, List<Computer>> userComputer)
+        {
+            int result = 0;
+            foreach (var user in users)
+            {
+                //Get the computer count for each user 
+                int ComputerCount = userComputer[user].Count();
+                int LaptopCount = 0;
+                foreach (var Computer in userComputer[user])
+                {
+                    if(Computer.ComputerType == "LAPTOP")
+                    {
+                        LaptopCount++;
+                    }
+                }
+
+                result = result + (ComputerCount - (LaptopCount / 2));
+
+            }
+            return result;
         }
     }
 }
