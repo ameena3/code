@@ -18,34 +18,39 @@ namespace CodeTest
 
             List<string> applicationUsers = new List<string>();
             Dictionary<string, List<Computer>> userComputers = new Dictionary<string, List<Computer>>();
-
+            string Path;
+            if (args.Count() == 0)
+            {
+                Path = Directory.GetFiles(".", "*.csv")[0];
+                Console.WriteLine(Path);
+            }
+            else
+            {
+                Path = args[0];
+            }
             // Instantiatng the Logic core .
             Logic start = new Logic();
 
             // Reading Phase 
             Console.WriteLine("Reading data please wait ...");
-            start.ReadAndInsertData(ref applicationUsers,ref userComputers, "374");
-
-            // Debug info if required for the calculations .
-            Console.WriteLine("Reading done displaying meaningful data :- ");
-            foreach (var user in userComputers)
-            {
-                Console.WriteLine("UserID is : {0}" , user.Key);
-                Console.WriteLine("the Computer list is :");
-                foreach (var Computer in user.Value)
-                {
-                    Console.WriteLine("ComputerID {0}, ComputerType {1}",Computer.ComputerID,Computer.ComputerType);
-                }
-            }
+            start.ReadAndInsertData( applicationUsers, userComputers, "374", Path);
 
             // Calulate the Licenses required. 
             Console.WriteLine("Calculating licensing position ... ");
             Console.WriteLine("");
             Console.WriteLine("");
+
+            #if DEBUG 
+                // Debug info if required for the calculations .
+                Console.WriteLine("Reading done displaying meaningful data :- ");
+            #endif
+
             int answer = start.calculateLicense(applicationUsers, userComputers);
             Console.WriteLine("************************");
             Console.WriteLine("The required License count is : {0}", answer);
+            Console.WriteLine("Press enter to quit.");
             Console.ReadLine();
+
         }
 
     }
