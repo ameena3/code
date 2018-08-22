@@ -1,0 +1,1 @@
+This is a sample application that calculated the licenses required.
