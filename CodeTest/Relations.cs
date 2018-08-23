@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeTest
 {
+    //Application user list and userComputer relation class.
     class Relations
     {
        public List<string> applicationUsers;

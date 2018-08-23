@@ -4,3 +4,10 @@ C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\bin\Rele
 C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\obj\Release\CodeTest.csproj.CoreCompileInputs.cache
 C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\obj\Release\CodeTest.exe
 C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\obj\Release\CodeTest.pdb
+D:\HobbyApp\CodeTest\codeTest\CodeTest\bin\Release\CodeTest.exe.config
+D:\HobbyApp\CodeTest\codeTest\CodeTest\bin\Release\CodeTest.exe
+D:\HobbyApp\CodeTest\codeTest\CodeTest\bin\Release\CodeTest.pdb
+D:\HobbyApp\CodeTest\codeTest\CodeTest\obj\Release\CodeTest.csprojAssemblyReference.cache
+D:\HobbyApp\CodeTest\codeTest\CodeTest\obj\Release\CodeTest.csproj.CoreCompileInputs.cache
+D:\HobbyApp\CodeTest\codeTest\CodeTest\obj\Release\CodeTest.exe
+D:\HobbyApp\CodeTest\codeTest\CodeTest\obj\Release\CodeTest.pdb
