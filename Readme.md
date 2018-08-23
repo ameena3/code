@@ -1,7 +1,7 @@
 This is a sample conosole application that calculating the licenses required for the application with ID 374.
 The output appears in the console itself.
 
-Application on DDEBUG build will explain how it got to the licensing position.
+Application on DDEBUG build will explain how it got to the licensing position.(Buids are to be done Visual studio 2017).
 
 This application will take care of the duplicates if any in the File .
 
