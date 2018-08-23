@@ -1,0 +1,6 @@
+C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\bin\Release\CodeTest.exe.config
+C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\bin\Release\CodeTest.exe
+C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\bin\Release\CodeTest.pdb
+C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\obj\Release\CodeTest.csproj.CoreCompileInputs.cache
+C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\obj\Release\CodeTest.exe
+C:\Users\ameena\Documents\Visual Studio 2017\Projects\CodeTest\CodeTest\obj\Release\CodeTest.pdb

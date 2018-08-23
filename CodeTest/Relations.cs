@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CodeTest
 {
-   public class Computer
+    class Relations
     {
-        public string ComputerID;
-        public string ComputerType;
+       public List<string> applicationUsers;
+       public  Dictionary<string, List<Computer>> userComputers { get; set; }
     }
 }

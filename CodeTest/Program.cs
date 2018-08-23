@@ -9,43 +9,55 @@ namespace CodeTest
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
             // Declaring the required valiables 
             // List to store the Users using that particular application
             // Dictionary for the Users to computer link.
+            Relations rel = new Relations();
+            rel.applicationUsers = new List<string>();
+            rel.userComputers = new Dictionary<string, List<Computer>>();
+            string applicationID = "374";
 
-            List<string> applicationUsers = new List<string>();
-            Dictionary<string, List<Computer>> userComputers = new Dictionary<string, List<Computer>>();
+            string Path;
+            if (args.Count() == 0)
+            {
+                Path = Directory.GetFiles(".", "*.csv")[0];
+                Console.WriteLine(Path);
+            }
+            else
+            {
+                Path = args[0];
+            }
 
+            if(args.Count() == 2)
+            {
+                applicationID = args[1];
+            }
             // Instantiatng the Logic core .
             Logic start = new Logic();
 
             // Reading Phase 
             Console.WriteLine("Reading data please wait ...");
-            start.ReadAndInsertData(ref applicationUsers,ref userComputers, "374");
-
-            // Debug info if required for the calculations .
-            Console.WriteLine("Reading done displaying meaningful data :- ");
-            foreach (var user in userComputers)
-            {
-                Console.WriteLine("UserID is : {0}" , user.Key);
-                Console.WriteLine("the Computer list is :");
-                foreach (var Computer in user.Value)
-                {
-                    Console.WriteLine("ComputerID {0}, ComputerType {1}",Computer.ComputerID,Computer.ComputerType);
-                }
-            }
+            start.ReadAndInsertData( rel.applicationUsers, rel.userComputers, applicationID, Path);
 
             // Calulate the Licenses required. 
             Console.WriteLine("Calculating licensing position ... ");
             Console.WriteLine("");
             Console.WriteLine("");
-            int answer = start.calculateLicense(applicationUsers, userComputers);
+
+            #if DEBUG 
+                // Debug info if required for the calculations .
+                Console.WriteLine("Reading done displaying meaningful data :- ");
+            #endif
+
+            int answer = start.calculateLicense(rel.applicationUsers, rel.userComputers);
             Console.WriteLine("************************");
             Console.WriteLine("The required License count is : {0}", answer);
+            Console.WriteLine("Press enter to quit.");
             Console.ReadLine();
+
         }
 
     }
