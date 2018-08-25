@@ -1,7 +1,7 @@
-This is a sample conosole application that calculating the licenses required for the application with ID 374.
+This is a sample conosole application that calculates the licenses required for the application with ID 374.
 The output appears in the console itself.
 
-Application on DEBUG build will explain how it got to the licensing position.(Buids are to be done Visual studio 2017).
+Application on DEBUG build will explain how it got to the licensing position.(Builds are to be done Visual studio 2017).
 
 CODE CAN ALSO BE DOWNLOADED USING :-
 
@@ -24,7 +24,7 @@ ComputerID, UserID, ApplicationID, ComputerType, Comments.
 Unit Tests cover the basic requirement :-
 
 Test CSV files are also present in the DEBUG folder for the builds of the tests.
-
+testing done includes 
 1.Checking for duplicates
 2.Checking to see if the relations between user and computers is correct. Ans the user counts are correct.
 3.Checking to see if the License count for the sample data is correct.  
