@@ -1,7 +1,12 @@
 This is a sample conosole application that calculating the licenses required for the application with ID 374.
 The output appears in the console itself.
 
-Application on DDEBUG build will explain how it got to the licensing position.(Buids are to be done Visual studio 2017).
+Application on DEBUG build will explain how it got to the licensing position.(Buids are to be done Visual studio 2017).
+
+CODE CAN ALSO BE DOWNLOADED USING :-
+
+git init 
+git clone "https://github.com/ameena3/code.git"
 
 This application will take care of the duplicates if any in the File .
 
